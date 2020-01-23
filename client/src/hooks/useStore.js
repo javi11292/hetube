@@ -16,4 +16,8 @@ export default getStore({
       }
     },
   },
+  logged: {
+    state: null,
+    reducer: (state, value) => value,
+  },
 })

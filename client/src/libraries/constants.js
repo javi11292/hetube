@@ -1,3 +1,4 @@
 export const NOTIFICATION = {
-  error: "error"
+  error: "error",
+  info: "info",
 }

@@ -1,4 +1,13 @@
 version: "3.7"
 services:
-  server:
+  hetube:
     build: .
+    volumes:
+      - "videos:/videos"
+  redis:
+    image: redis
+  postgres:
+    image: postgres
+
+volumes:
+  videos:
