@@ -25,6 +25,7 @@ function Home() {
         <Input
           label="Archivo"
           value={file.name}
+          InputLabelProps={{ shrink: true }}
           InputProps={{ readOnly: true, classes: { root: styles.fileInput, input: styles.innerInput } }} />
       </label>
 
