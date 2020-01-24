@@ -5,21 +5,23 @@ export default makeStyles(theme => ({
     display: "grid",
     gridTemplateColumns: "1fr",
     [theme.breakpoints.up("sm")]: {
+      margin: "1rem 0.5rem",
       gridTemplateColumns: "1fr 1fr",
     },
     [theme.breakpoints.up("md")]: {
       gridTemplateColumns: "1fr 1fr 1fr",
     },
     [theme.breakpoints.up("lg")]: {
+      margin: "2rem 1rem",
       gridTemplateColumns: "1fr 1fr 1fr 1fr",
     },
   },
   videoCard: {
     [theme.breakpoints.up("sm")]: {
-      margin: "0.5rem",
+      margin: "0 0.5rem",
     },
     [theme.breakpoints.up("lg")]: {
-      margin: "1rem",
+      margin: "0 1rem",
     },
   },
   video: {
