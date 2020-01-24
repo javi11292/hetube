@@ -1,5 +1,5 @@
 function passport(req, res, next) {
-  if (req.session.username) next()
+  if (req.session.logged) next()
   else res.sendStatus(401)
 }
 
