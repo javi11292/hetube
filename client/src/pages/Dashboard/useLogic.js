@@ -9,7 +9,7 @@ function useLogic({ contentRef }) {
   const history = useHistory()
   const [page, setPage] = useState(0)
   const addNotification = useStore("notifications", false)
-  const allowLoading = useRef()
+  const allowLoading = useRef(false)
 
   useEffect(() => {
     const content = contentRef.current
@@ -39,7 +39,7 @@ function useLogic({ contentRef }) {
     }
 
     getVideoList()
-  }, [page])
+  }, [page, addNotification])
 
   function handleClick({ currentTarget }) {
     history.push(`/view/${currentTarget.dataset.id}`)
