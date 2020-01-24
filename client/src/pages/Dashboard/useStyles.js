@@ -26,6 +26,7 @@ export default makeStyles(theme => ({
     width: "100%",
     height: "100%",
     cursor: "pointer",
+    objectFit: "cover",
   },
   details: {
     padding: "0.5rem",
