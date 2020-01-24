@@ -14,7 +14,7 @@ function Main() {
   return (
     <div className={styles.root}>
       <Notifications />
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Suspense fallback={null}>
           <Switch>
             <Route path={["/login", "/register"]}>

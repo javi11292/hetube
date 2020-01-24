@@ -4,7 +4,11 @@ function useLogic() {
   const history = useHistory()
 
   function handleClick({ currentTarget }) {
-    history.push(`/${currentTarget.dataset.path}`)
+    if (!currentTarget.dataset.path) {
+      window.location.assign("/")
+    } else {
+      history.push(`/${currentTarget.dataset.path}`)
+    }
   }
 
   return { handleClick }

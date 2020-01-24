@@ -8,12 +8,5 @@ export default makeStyles({
   },
   content: {
     overflow: "auto",
-    padding: "0.5rem",
-  },
-  buttons: {
-    marginLeft: "auto",
-  },
-  title: {
-    cursor: "pointer",
   },
 })

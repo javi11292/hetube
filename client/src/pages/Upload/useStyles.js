@@ -8,9 +8,6 @@ export default makeStyles(theme => ({
     marginLeft: "auto",
     marginRight: "auto",
     maxWidth: "50rem",
-    [theme.breakpoints.up("sm")]: {
-      padding: "1.5rem",
-    }
   },
   hidden: {
     display: "none",

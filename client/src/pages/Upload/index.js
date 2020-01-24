@@ -9,7 +9,6 @@ function Input(props) {
   return <TextField
     fullWidth
     margin="dense"
-    variant="outlined"
     className={styles.input}
     {...props} />
 }
@@ -25,7 +24,6 @@ function Home() {
         <Input
           label="Archivo"
           value={file.name}
-          InputLabelProps={{ shrink: true }}
           InputProps={{ readOnly: true, classes: { root: styles.fileInput, input: styles.innerInput } }} />
       </label>
 
@@ -37,7 +35,6 @@ function Home() {
 
       <Input
         multiline
-        rows="5"
         label="Descripción"
         value={details.description}
         onChange={handleChange}
