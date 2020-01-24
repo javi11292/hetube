@@ -1,4 +1,6 @@
-const host = `${process.env.REACT_APP_HOST || ""}/api`
+import { HOST } from "./constants"
+
+const host = `${HOST}/api`
 
 async function parseResponse(response) {
   if (!response.ok) return { error: response.statusText }

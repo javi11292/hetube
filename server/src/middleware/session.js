@@ -4,6 +4,8 @@ const RedisStore = require("connect-redis")(session)
 
 const redisClient = redis.createClient("redis://redis")
 
+redisClient.on("error", console.log)
+
 module.exports = session({
   store: new RedisStore({ client: redisClient }),
   secret: "secret",

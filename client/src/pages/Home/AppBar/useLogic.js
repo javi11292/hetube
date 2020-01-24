@@ -1,7 +1,10 @@
 import { useHistory } from "react-router-dom"
+import useStore from "hooks/useStore"
 
 function useLogic() {
   const history = useHistory()
+  const [logged] = useStore("logged")
+  const showBack = history.location.pathname !== "/"
 
   function handleClick({ currentTarget }) {
     if (!currentTarget.dataset.path) {
@@ -11,7 +14,11 @@ function useLogic() {
     }
   }
 
-  return { handleClick }
+  function back() {
+    history.goBack()
+  }
+
+  return { logged, handleClick, back, showBack }
 }
 
 export default useLogic

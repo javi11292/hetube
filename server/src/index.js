@@ -9,18 +9,14 @@ function initialize() {
 
 function run() {
   const app = express()
-  
+
   app.use(session)
   app.use(express.json())
   app.use(router)
 
-  app.listen(3000, () => {
-    console.log("Server started")
-  })
+  app.listen(3000, () => console.log("Server started"))
 }
 
 initialize()
 
-process.on("SIGTERM", () => {
-  process.exit()
-})
+process.on("SIGTERM", process.exit)

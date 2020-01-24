@@ -1,5 +1,6 @@
 import React from "react"
 import { Typography } from "@material-ui/core"
+import { HOST } from "libraries/constants"
 import Ratio from "components/Ratio"
 import useLogic from "./useLogic"
 import useStyles from "./useStyles"
@@ -15,11 +16,13 @@ function Dashboard() {
           <Ratio>
             <video
               className={styles.video}
-              src={`${process.env.REACT_APP_HOST || ""}/api/video/${id}`}
+              src={`${HOST}/api/video/${id}`}
               data-id={id}
               onClick={handleClick} />
           </Ratio>
-          <Typography variant="subtitle2" className={styles.title}>{title}</Typography>
+          <div className={styles.details}>
+            <Typography variant="subtitle2">{title}</Typography>
+          </div>
         </div>
       ))}
     </div>

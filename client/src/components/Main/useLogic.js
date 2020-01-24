@@ -3,7 +3,7 @@ import { post } from "libraries/fetch"
 import useStore from "hooks/useStore"
 
 function useLogic() {
-  const [logged, setLogged] = useStore("logged")
+  const setLogged = useStore("logged", false)
 
   useEffect(() => {
     async function checkSession() {
@@ -13,8 +13,6 @@ function useLogic() {
 
     checkSession()
   }, [setLogged])
-
-  return { logged }
 }
 
 export default useLogic

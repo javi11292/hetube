@@ -1,14 +1,13 @@
 import React, { Suspense } from "react"
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Notifications from "components/Notifications"
 import useLogic from "./useLogic"
 import useStyles from "./useStyles"
 
-const Login = React.lazy(() => import("pages/Login"))
 const Home = React.lazy(() => import("pages/Home"))
 
 function Main() {
-  const { logged } = useLogic()
+  useLogic()
   const styles = useStyles()
 
   return (
@@ -17,11 +16,6 @@ function Main() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Suspense fallback={null}>
           <Switch>
-            <Route path={["/login", "/register"]}>
-              {logged && <Redirect to="/" />}
-              <Login />
-            </Route>
-            
             <Route>
               <Home />
             </Route>

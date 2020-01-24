@@ -6,5 +6,6 @@ export default makeStyles({
   },
   title: {
     cursor: "pointer",
+    paddingLeft: props => props.showBack ? 0 : "0.75rem",
   },
 })
