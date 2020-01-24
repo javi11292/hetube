@@ -27,9 +27,17 @@ router.post("/upload", passport, upload.single("file"), async ({ file = {}, sess
   }
 })
 
-router.get("/list/:id?", async (req, res) => {
+router.get("/list/:page?", async (req, res) => {
   try {
-    res.send(await postgres.video.list(req.params.id))
+    res.send(await postgres.video.list(req.params.page))
+  } catch (error) {
+    res.send({ error: error.message })
+  }
+})
+
+router.get("/get/:id", async (req, res) => {
+  try {
+    res.send(await postgres.video.get(req.params.id))
   } catch (error) {
     res.send({ error: error.message })
   }

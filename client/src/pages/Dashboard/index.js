@@ -5,8 +5,8 @@ import Ratio from "components/Ratio"
 import useLogic from "./useLogic"
 import useStyles from "./useStyles"
 
-function Dashboard() {
-  const { videoList, handleClick } = useLogic()
+function Dashboard({ contentRef }) {
+  const { videoList, handleClick } = useLogic({ contentRef })
   const styles = useStyles()
 
   return (

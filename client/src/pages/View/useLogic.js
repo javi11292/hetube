@@ -8,7 +8,7 @@ function useLogic() {
 
   useEffect(() => {
     async function getDetails() {
-      const response = await get(`/video/list/${id}`)
+      const response = await get(`/video/get/${id}`)
       if (!response.error) setDetails(response[0])
     }
 

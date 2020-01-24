@@ -10,14 +10,14 @@ const View = React.lazy(() => import("pages/View"))
 const Login = React.lazy(() => import("pages/Login"))
 
 function Home() {
-  const { logged } = useLogic()
+  const { logged, contentRef } = useLogic()
   const styles = useStyles()
 
   return (
     <div className={styles.root}>
       <AppBar />
 
-      <div className={styles.content}>
+      <div className={styles.content} ref={contentRef}>
         <Suspense fallback={null}>
           <Switch>
             <Route path={["/login", "/register"]}>
@@ -34,7 +34,7 @@ function Home() {
             </Route>
 
             <Route>
-              <Dashboard />
+              <Dashboard contentRef={contentRef} />
             </Route>
           </Switch>
         </Suspense>
