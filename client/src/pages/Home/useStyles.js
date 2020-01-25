@@ -7,10 +7,14 @@ export default makeStyles({
     height: "100%",
   },
   content: {
-    overflow: "auto",
+    overflow: "scroll",
     display: "grid",
   },
-  area: {
+  dashboard: {
+    gridArea: "1 / 1",
+    display: props => props.isDashboardVisible ? "unset" : "none",
+  },
+  pages: {
     gridArea: "1 / 1",
   },
 })

@@ -10,19 +10,19 @@ const View = React.lazy(() => import("pages/View"))
 const Login = React.lazy(() => import("pages/Login"))
 
 function Home() {
-  const { logged, contentRef } = useLogic()
-  const styles = useStyles()
+  const { logged, contentRef, isDashboardVisible } = useLogic()
+  const styles = useStyles({ isDashboardVisible })
 
   return (
     <div className={styles.root}>
       <AppBar />
 
       <div className={styles.content} ref={contentRef}>
-        <div className={styles.area}>
+        <div className={styles.dashboard}>
           <Dashboard contentRef={contentRef} />
         </div>
 
-        <div className={styles.area}>
+        <div className={styles.pages}>
           <Suspense fallback={null}>
             <Switch>
               <Route path={["/login", "/register"]}>
