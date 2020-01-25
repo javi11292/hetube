@@ -8,5 +8,9 @@ export default makeStyles({
   },
   content: {
     overflow: "auto",
+    display: "grid",
+  },
+  area: {
+    gridArea: "1 / 1",
   },
 })

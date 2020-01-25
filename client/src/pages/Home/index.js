@@ -18,26 +18,28 @@ function Home() {
       <AppBar />
 
       <div className={styles.content} ref={contentRef}>
-        <Suspense fallback={null}>
-          <Switch>
-            <Route path={["/login", "/register"]}>
-              {logged && <Redirect to="/" />}
-              <Login />
-            </Route>
+        <div className={styles.area}>
+          <Dashboard contentRef={contentRef} />
+        </div>
 
-            <Route path="/upload">
-              <Upload />
-            </Route>
+        <div className={styles.area}>
+          <Suspense fallback={null}>
+            <Switch>
+              <Route path={["/login", "/register"]}>
+                {logged && <Redirect to="/" />}
+                <Login />
+              </Route>
 
-            <Route path="/view/:id">
-              <View />
-            </Route>
+              <Route path="/upload">
+                <Upload />
+              </Route>
 
-            <Route>
-              <Dashboard contentRef={contentRef} />
-            </Route>
-          </Switch>
-        </Suspense>
+              <Route path="/view/:id">
+                <View />
+              </Route>
+            </Switch>
+          </Suspense>
+        </div>
       </div>
     </div>
   )
