@@ -7,7 +7,7 @@ export default makeStyles({
     height: "100%",
   },
   content: {
-    overflow: "scroll",
+    overflowY: "scroll",
     display: "grid",
   },
   dashboard: {
