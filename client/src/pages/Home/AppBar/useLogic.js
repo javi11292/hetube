@@ -11,7 +11,7 @@ function useLogic() {
 
   function handleClick({ currentTarget }) {
     if (!currentTarget.dataset.path) {
-      window.location.assign("/")
+      window.location.assign(process.env.PUBLIC_URL + "/")
     } else {
       history.push(`/${currentTarget.dataset.path}`)
     }
@@ -24,7 +24,7 @@ function useLogic() {
   async function logout() {
     const { error } = await post("/logout")
     if (!error) {
-      window.location.assign("/")
+      window.location.assign(process.env.PUBLIC_URL + "/")
     } else {
       addNotification({ action: "push", value: error, type: NOTIFICATION.error })
     }
