@@ -16,6 +16,7 @@ COPY server .
 FROM node:alpine
 RUN mkdir /client && chown node /client
 RUN mkdir /server && chown node /server
+RUN mkdir /videos && chown node /videos
 USER node
 COPY --from=client /client/build /client
 COPY --from=server /server /server
