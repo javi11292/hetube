@@ -12,7 +12,7 @@ function View() {
   return (
     <>
       <Ratio>
-        <video className={styles.video} src={`${HOST}/api/video/${id}`} controls />
+        <video preload="metadata" className={styles.video} src={`${HOST}/api/video/${id}`} controls />
       </Ratio>
       <div className={styles.details}>
         <Typography variant="h5">{details.title}</Typography>

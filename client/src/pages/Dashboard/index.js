@@ -15,6 +15,7 @@ function Dashboard({ contentRef }) {
         <div key={id} className={styles.videoCard}>
           <Ratio>
             <video
+              preload="metadata"
               className={styles.video}
               src={`${HOST}/api/video/${id}`}
               data-id={id}
